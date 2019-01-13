@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <title>Cat Swipe</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    {{ JSGlue.include() }}
+
+    <!-- begin header -->
+    {% block header %}
+        {% include "header.html" %}
+    {% endblock %}
+    <!-- end header -->
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+
+    <!-- begin content -->
+    {% block content %}
+    {% endblock %}
+    <!-- end content -->
+</body>
+</html>

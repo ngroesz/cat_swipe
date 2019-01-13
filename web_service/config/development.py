@@ -1,0 +1,19 @@
+import os
+
+DEBUG = True
+
+DATABASE_USERNAME = os.getenv('DEVELOPMENT_DATABASE_USERNAME')
+DATABASE_PASSWORD = os.getenv('DEVELOPMENT_DATABASE_PASSWORD')
+DATABASE_HOSTNAME = os.getenv('DEVELOPMENT_DATABASE_HOSTNAME')
+DATABASE_PORT = os.getenv('DEVELOPMENT_DATABASE_PORT')
+DATABASE_NAME = os.getenv('DEVELOPMENT_DATABASE_NAME')
+
+SQLALCHEMY_ECHO = True
+
+SQLALCHEMY_DATABASE_URI = 'postgresql://{username}:{password}@{host}:{port}/{database}'.format(
+    username=os.getenv('DEVELOPMENT_DATABASE_USERNAME'),
+    password=os.getenv('DEVELOPMENT_DATABASE_PASSWORD'),
+    host=os.getenv('DEVELOPMENT_DATABASE_HOSTNAME'),
+    port=os.getenv('DEVELOPMENT_DATABASE_PORT'),
+    database=os.getenv('DEVELOPMENT_DATABASE_NAME')
+)

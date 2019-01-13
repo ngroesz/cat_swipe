@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+    web-service:
+        build: .
+        ports:
+            - "5000:5000"
+        env_file: config/.env
+        depends_on:
+            - db
+        environment:
+            FLASK_APP: flasky.py
+            FLASK_ENV: development
+        labels:
+            NAME: "web-service"
+        volumes:
+            - .:/var/app/current/web_service
+            - ./config:/var/app/current/config
+    db:
+        image: postgres:9.6-alpine
+        ports:
+            - "5432:5432"
+        restart: always
+        environment:
+            POSTGRES_DB: cat_swipe_dev
+            POSTGRES_PASSWORD: password

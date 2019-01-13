@@ -1,0 +1,3 @@
+[submodule "guidance_remote_dev_data"]
+	path = guidance_remote_dev_data
+	url = git@bitbucket.org:petejacobs/guidance_remote_dev_data.git

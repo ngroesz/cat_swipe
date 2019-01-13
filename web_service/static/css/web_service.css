@@ -1,0 +1,71 @@
+div {
+    margin: 15px;
+}
+
+a, a.visted {
+    color: blue;
+}
+
+#navigation {
+    float: left;
+}
+
+#user {
+    float: right;
+}
+
+#end_header {
+    clear: both;
+}
+
+.error {
+    color: red;
+}
+
+table.data {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+.data th, .data td {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+.short_acting_insulin_setting_input {
+    text-align: right;
+}
+
+.form_container {
+    width: 100%;
+    clear: both;
+    text-align: center;
+}
+
+.time_scale_buttons {
+    width: 100%;
+    text-align: center;
+}
+
+.button {
+    margin: 5px;
+}
+
+#date_range {
+    text-align: center;
+    font-weight: bold;
+}
+
+div.form_input {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-gap: 5px;
+}
+
+div.form_input label {
+    text-align: right;
+}
+
+div.form_input label:after {
+    content: ":";
+}

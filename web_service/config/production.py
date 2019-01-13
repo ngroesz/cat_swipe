@@ -1,0 +1,19 @@
+import os
+
+DEBUG = False
+FLASK_DEBUG = False
+SQLALCHEMY_ECHO = False
+
+DATABASE_USERNAME = os.getenv('PRODUCTION_DATABASE_USERNAME')
+DATABASE_PASSWORD = os.getenv('PRODUCTION_DATABASE_PASSWORD')
+DATABASE_HOSTNAME = os.getenv('PRODUCTION_DATABASE_HOSTNAME')
+DATABASE_PORT = os.getenv('PRODUCTION_DATABASE_PORT')
+DATABASE_NAME = os.getenv('PRODUCTION_DATABASE_NAME')
+
+SQLALCHEMY_DATABASE_URI = 'postgresql://{username}:{password}@{host}:{port}/{database}'.format(
+    username=os.getenv('PRODUCTION_DATABASE_USERNAME'),
+    password=os.getenv('PRODUCTION_DATABASE_PASSWORD'),
+    host=os.getenv('PRODUCTION_DATABASE_HOSTNAME'),
+    port=os.getenv('PRODUCTION_DATABASE_PORT'),
+    database=os.getenv('PRODUCTION_DATABASE_NAME')
+)

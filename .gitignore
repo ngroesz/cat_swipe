@@ -1,0 +1,5 @@
+.env
+venv
+*.pyc
+.pytest_cache
+guidance_remote_dev_data/

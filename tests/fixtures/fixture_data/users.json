@@ -1,0 +1,12 @@
+[
+        {
+            "username": "admin",
+            "email": "admin@email.com",
+            "password": "super_secure_password",
+            "is_admin": true
+        },
+        {
+            "username": "1234",
+            "password": "password"
+        }
+]

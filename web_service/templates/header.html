@@ -1,0 +1,10 @@
+{% block header %}
+<div>
+    <div id="navigation">
+    <div id="user">
+        <a href="{{ url_for('admin.user_admin', user_id=current_user.id) }}">{{ current_user.username }}</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+<hr id="end_header"/>
+{% endblock %}
