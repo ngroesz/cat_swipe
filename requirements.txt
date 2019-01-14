@@ -3,6 +3,8 @@ aniso8601==3.0.2
 atomicwrites==1.2.1
 attrs==18.2.0
 blessed==1.15.0
+boto3==1.7.4
+botocore==1.10.6
 cached-property==1.5.1
 cement==2.8.2
 certifi==2018.8.24
@@ -60,8 +62,8 @@ python-editor==1.0.3
 python-engineio==2.2.0
 python-socketio==2.0.0
 pytz==2018.5
-PyYAML==3.13
-requests==2.18.4
+PyYAML==4.2b1
+requests==2.20.0
 s3transfer==0.1.13
 semantic-version==2.5.0
 simplejson==3.16.0
@@ -72,7 +74,7 @@ termcolor==1.1.0
 texttable==0.9.1
 tzlocal==1.5.1
 ua-parser==0.8.0
-urllib3==1.22
+urllib3==1.23
 user-agents==1.1.0
 wcwidth==0.1.7
 websocket-client==0.53.0

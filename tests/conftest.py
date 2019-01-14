@@ -9,15 +9,12 @@ import json
 import os
 import pytest
 
-from fixtures.data_types import create_data_types
-from fixtures.studies import create_studies
+from fixtures.persons import create_persons
 from fixtures.users import create_users
 import web_service.database
 #from web_service.database import connection_string, db, db_engine
 from web_service import create_app
 
-# this fixture injects our own session
-# for this reason, it's critical that the _db fixture be called before the Flask app fixture is initialized
 @pytest.yield_fixture(scope='function')
 def _db():
     print('OPENING SESSION')

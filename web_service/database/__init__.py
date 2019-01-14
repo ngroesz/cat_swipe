@@ -1,5 +1,6 @@
 from flask import _app_ctx_stack
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 import os
@@ -53,9 +54,10 @@ def connection_string():
 
 
 db = SQLAlchemy()
-should_echo = True if os.getenv('FLASK_ENV') == 'development' else False
-db_engine = create_engine(connection_string(), echo=should_echo)
-db.session = scoped_session(
-                sessionmaker(autocommit=False, autoflush=False, bind=db_engine),
-                scopefunc=_app_ctx_stack.__ident_func__
-             )
+base = declarative_base()
+#should_echo = True if os.getenv('FLASK_ENV') == 'development' else False
+#db_engine = create_engine(connection_string(), echo=should_echo)
+#db.session = scoped_session(
+#                sessionmaker(autocommit=False, autoflush=False, bind=db_engine),
+#                scopefunc=_app_ctx_stack.__ident_func__
+#             )

@@ -13,7 +13,7 @@ class PersonSchema(Schema):
 
     class Meta:
         type_ = 'person'
-        self_view = 'api.person'
+        self_view = 'api.person_detail'
         self_view_kwargs = {'id': '<id>'}
         self_view_many = 'api.person_list'
 

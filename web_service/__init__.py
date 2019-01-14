@@ -33,30 +33,30 @@ def create_app(config_name=None):
         from web_service.api.bootstrap import api_bp # noqa
         flask_app.register_blueprint(api_bp)
 
-    from web_service.auth import auth # noqa
-    flask_app.register_blueprint(auth.bp, url_prefix='/')
+        from web_service.auth import auth # noqa
+        flask_app.register_blueprint(auth.bp, url_prefix='/')
 
-    from web_service.web_interface import landing_page # noqa
-    flask_app.register_blueprint(landing_page.bp, url_prefix='/')
+        from web_service.web_interface import landing_page # noqa
+        flask_app.register_blueprint(landing_page.bp, url_prefix='/')
 
-    from web_service.web_interface import login # noqa
-    flask_app.register_blueprint(login.bp, url_prefix='/login')
+        from web_service.web_interface import login # noqa
+        flask_app.register_blueprint(login.bp, url_prefix='/login')
 
-    from web_service.web_socket import pg_pubsub_client # noqa
-    flask_app.register_blueprint(pg_pubsub_client.bp)
+        from web_service.web_socket import pg_pubsub_client # noqa
+        flask_app.register_blueprint(pg_pubsub_client.bp)
 
-    jwt.init_app(flask_app)
-    socketio.init_app(flask_app)
-    jsglue.init_app(flask_app)
+        jwt.init_app(flask_app)
+        socketio.init_app(flask_app)
+        jsglue.init_app(flask_app)
 
-    @flask_app.teardown_appcontext
-    def shutdown_session(exception=None):
-        db.session.remove()
+        @flask_app.teardown_appcontext
+        def shutdown_session(exception=None):
+            db.session.remove()
 
-    @flask_app.context_processor
-    def add_arguments_for_all_templates():
-        return get_arguments_for_all_templates()
+        @flask_app.context_processor
+        def add_arguments_for_all_templates():
+            return get_arguments_for_all_templates()
 
-    flask_app.logger.info('created app with environment {}'.format(os.getenv('FLASK_ENV')))
+        flask_app.logger.info('created app with environment {}'.format(os.getenv('FLASK_ENV')))
 
-    return flask_app
+        return flask_app

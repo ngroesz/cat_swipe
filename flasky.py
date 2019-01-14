@@ -13,7 +13,6 @@ from web_service import create_app
 from web_service import socketio
 from web_service.database import db
 
-from web_service.models.cat import Cat
 from web_service.models.person import Person
 from web_service.models.swipe import Swipe
 
@@ -28,7 +27,6 @@ migrate = Migrate(flask_app, db)
 @flask_app.shell_context_processor
 def make_shell_context():
     return dict(app=flask_app, db=db,
-                Cat=Cat,
                 Person=Person,
                 Swipe=Swipe)
 

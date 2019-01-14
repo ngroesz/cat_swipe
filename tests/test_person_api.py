@@ -2,8 +2,8 @@ import simplejson as json
 import re
 import requests
 
-jef test_person_api(client):
-    response = client.get('/api/studies')
+def test_person_api(client, create_users, create_persons):
+    response = client.get('/api/persons')
     assert response.status_code == 200
     assert response.json == {"authorized": "false"}
 
@@ -16,6 +16,6 @@ jef test_person_api(client):
 
     data = json.dumps(dict(access_token_cookie=access_token))
     client.set_cookie('localhost', 'access_token_cookie', access_token)
-    response = client.get('/api/studies', data=data)
+    response = client.get('/api/persons', data=data)
     assert response.status_code == 200
     assert int(response.json['meta']['count']) == 2
