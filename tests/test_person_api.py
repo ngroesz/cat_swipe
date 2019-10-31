@@ -19,3 +19,8 @@ def test_person_api(client, create_users, create_persons):
     response = client.get('/api/persons', data=data)
     assert response.status_code == 200
     assert int(response.json['meta']['count']) == 2
+
+
+def test_person_api_again(client, create_users, create_persons):
+    response = client.get('/api/persons')
+    assert response.status_code == 200
