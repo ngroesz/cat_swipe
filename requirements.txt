@@ -37,7 +37,7 @@ itsdangerous==1.1.0
 Jinja2==2.10.3
 jmespath==0.9.4
 jsonschema==3.1.1
-Mako==1.1.0
+Mako==1.2.2
 MarkupSafe==1.1.1
 marshmallow==2.18.0
 marshmallow-jsonapi==0.22.0
